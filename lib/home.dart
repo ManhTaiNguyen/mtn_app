@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mtn_app/details.dart';
 import 'package:mtn_app/widget_support.dart';
 
 class Home extends StatefulWidget {
@@ -51,41 +52,47 @@ class _HomeState extends State<Home> {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  Container(
-                    margin: EdgeInsets.all(4),
-                    child: Material(
-                      elevation: 5.0,
-                      borderRadius: BorderRadius.circular(20),
-                      child: Container(
-                        padding: EdgeInsets.all(14),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Image.asset(
-                              "images/salad2.png",
-                              height: 150,
-                              width: 150,
-                              fit: BoxFit.cover,
-                            ),
-                            Text(
-                              "Salad thap cam",
-                              style: AppWidget.SemiBoldTextFieldStyle(),
-                            ),
-                            SizedBox(
-                              height: 5.0,
-                            ),
-                            Text(
-                              "Fresh and healthy",
-                              style: AppWidget.LightTextFieldStyle(),
-                            ),
-                            SizedBox(
-                              height: 5.0,
-                            ),
-                            Text(
-                              "\$25",
-                              style: AppWidget.SemiBoldTextFieldStyle(),
-                            )
-                          ],
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Details()));
+                    },
+                    child: Container(
+                      margin: EdgeInsets.all(4),
+                      child: Material(
+                        elevation: 5.0,
+                        borderRadius: BorderRadius.circular(20),
+                        child: Container(
+                          padding: EdgeInsets.all(14),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Image.asset(
+                                "images/salad2.png",
+                                height: 150,
+                                width: 150,
+                                fit: BoxFit.cover,
+                              ),
+                              Text(
+                                "Salad thap cam",
+                                style: AppWidget.SemiBoldTextFieldStyle(),
+                              ),
+                              SizedBox(
+                                height: 5.0,
+                              ),
+                              Text(
+                                "Fresh and healthy",
+                                style: AppWidget.LightTextFieldStyle(),
+                              ),
+                              SizedBox(
+                                height: 5.0,
+                              ),
+                              Text(
+                                "\$25",
+                                style: AppWidget.SemiBoldTextFieldStyle(),
+                              )
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -133,6 +140,60 @@ class _HomeState extends State<Home> {
                     ),
                   ),
                 ],
+              ),
+            ),
+            SizedBox(
+              height: 30.0,
+            ),
+            Container(
+              margin: EdgeInsets.only(right: 10.0),
+              child: Material(
+                elevation: 5.0,
+                borderRadius: BorderRadius.circular(20),
+                child: Container(
+                  padding: EdgeInsets.all(5),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Image.asset("images/salad2.png",
+                          height: 120, width: 120, fit: BoxFit.cover),
+                      SizedBox(
+                        width: 20.0,
+                      ),
+                      Column(
+                        children: [
+                          Container(
+                            width: MediaQuery.of(context).size.width / 2,
+                            child: Text(
+                              "Mediterranean Chickpea Salad",
+                              style: AppWidget.SemiBoldTextFieldStyle(),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 5.0,
+                          ),
+                          Container(
+                            width: MediaQuery.of(context).size.width / 2,
+                            child: Text(
+                              "Honey goot cheese",
+                              style: AppWidget.LightTextFieldStyle(),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 5.0,
+                          ),
+                          Container(
+                            width: MediaQuery.of(context).size.width / 2,
+                            child: Text(
+                              "\$28",
+                              style: AppWidget.SemiBoldTextFieldStyle(),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ),
           ],
